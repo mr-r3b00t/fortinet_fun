@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Date: Fri, 18 Apr 2025 18:56:56 GMT
+ETag: sne4m8pt6nQ7d8QNngfHi8t5cQG6gq37
+Cache-Control: max-age=0, must-revalidate
+Accept-Ranges: none
+Content-Length: 131
+Keep-Alive: timeout=10, max=100
+Connection: Keep-Alive
+Content-Type: text/html
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'; object-src 'self'; script-src 'self' https:  'unsafe-eval' 'unsafe-inline' blob:;
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000
+
+<html><script type="text/javascript">
+if (window!=top) top.location=window.location;top.location="/remote/login";
+</script></html>
