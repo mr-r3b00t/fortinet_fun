@@ -1,0 +1,6 @@
+config vpn ssl web portal
+edit "full-access"
+set web-mode enable
+config sys global
+set sslvpn-web-mode enable
+end
