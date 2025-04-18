@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en" class="main-app">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-itunes-app" content="app-id=1475674905">
+        <link href="/styles.css" rel="stylesheet" type="text/css">
+        <link href="/css/legacy-main.css" rel="stylesheet" type="text/css">
+        <title>Please Login</title>
+    </head>
+    <body>
+        <div class="view-container">
+            <form class="prompt legacy-prompt" action="/remote/logincheck" method="post" name="f" autocomplete="off">
+                <div class="content with-header with-sslvpn">
+                    <div class="sslvpn-left">
+                        <img src="/assets/brand-login-left.svg" alt="brand-left" height="500px"/>
+                    </div>
+                    <div class="sub-content sub-sslvpn">
+                        <div class="sslvpn-title">
+                            <img src="/assets/sslvpn-portal-login.svg" width="300px" alt="SSL-VPN Portal login" />
+                        </div>
+                        <div class="wide-inputs">
+                            <!--remoteauthtimeout=10-->
+<input type="text" name="username" id="username" placeholder="Name"><input type="password" name="credential" id="credential" placeholder="Password" maxlength="128"><div class="info-message" id="token_msg" style="display: none;"><div class="message-content" id="token_label"></div></div><input type="password" style="display: none;" maxlength="128" name="credential2" id="credential2"><input type="password" style="display: none;" maxlength="128" name="credential3" id="credential3"><div class="button-actions wide"><button class="primary" type="button" name="ftm_push_button" id="ftm_push_button" onclick="try_ftm_push()    " style="display: none" disabled>Use FTM Push</button></div><input type="password" style="display: none;" placeholder="Token" name="code" id="code"><div id="driftmsg" style="display: none;" class="warning-message">Token clock drift detected. Please input the next code and continue.</div><input type="password" style="display: none;" name="code2" id="code2" placeholder="Next Token Code">
+                        </div>
+                        <div class="button-actions wide sslvpn-buttons">
+                            <button class="primary" type="button" name="login_button" id="login_button" onClick="try_login()">
+                                Login
+                            </button>
+                            <button type="button" name="skip_button" id="skip_button" onClick="try_skip()" style="display:none">
+                                Skip
+                            </button>
+                            <button id="launch-forticlient-button" type="button" onClick="launchFortiClient()">
+                                <f-icon class="ftnt-forticlient"></f-icon>
+                                <span>Launch FortiClient</span>
+                            </button>
+                            <iframe id="launch-forticlient-iframe" style="display:none"></iframe>
+                            <button id="saml-login-bn" class="primary" type="button" name="saml_login_bn" onClick="launchSamlLogin()"  style="display:none">
+                            SSO Login
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sslvpn-right">
+                        <img src="/assets/brand-login-right.svg" alt="brand-right" height="500px"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <input type=hidden name="ftm_push_enabled" id="ftm_push_enabled" value="1"><input type=hidden name=just_logged_in value=1><input type=hidden name=magic id=magic_id value=""><input type=hidden name=reqid id=reqid_id value="0"><input type=hidden name=grpid id=grpid_id value=""><input type=hidden name=realm id=realm_id value=""><input type=hidden name=redir value="/sslvpn/portal/index.html"><input type=hidden name=saml_login id=saml_login_id value="0"><script type="text/javascript" src="/js/legacy_theme_setup.js"></script><script type="text/javascript" src="/sslvpn/js/login.js "></script><script type='text/javascript'>(function() {var xhr = new XMLHttpRequest();xhr.onload = function() {if (xhr.status === 200) {try {window.fgt_lang = JSON.parse(xhr.responseText);} catch (e) {console.error('Failed to parse language JSON');}}};xhr.open('GET', '/static/lang/en.json', false);xhr.send();})() ;</script><script>document.onkeydown = key_pressdown;function load_login_strings() {var tmp = document.getElementById("err_val");var name = document.getElementById("username");var pass = document.getElementById("credential");if (tmp) {tmp.innerHTML = fgt_lang["error"] + ": " + fgt_lang[tmp.getAttribute('title')];}name.placeholder = fgt_lang["Username"];pass.placeholder = fgt_lang["sslvpn_portal::Password"];}window.onload = load_login_strings;</script>
+</html>
