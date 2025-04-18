@@ -1,3 +1,4 @@
+#This SSLVPN is set to TCP 443 - it might be on 443 (default) or something else
 https://[target]:444/
 https://[target]:444/
 https://[target]:444/assets
